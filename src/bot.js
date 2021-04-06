@@ -13,12 +13,19 @@ const client = new tmi.Client({
 
 client.connect();
 
+// client.on('join', (channel, username, self) => {
+//   //if subscriber
+//   client.say(channel, `@${tags.username}, has join the chat! Welcome friend!`);
+// })
+
 client.on('message', (channel, tags, message, self) => {
   // Ignore echoed messages.
   if(self) return;
 
   if(message.toLowerCase() === '!hello') {
     // "@alca, heya!"
+    console.log('channel: ' + channel
+                + '\ntags: ' + tags);
     client.say(channel, `@${tags.username}, heya!`);
   }
 });
