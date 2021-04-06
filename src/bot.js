@@ -23,16 +23,19 @@ client.on('message', (channel, tags, message, self) => {
 
   if(message.toLowerCase() === '!hello') {
     // "@alca, heya!"
-    console.log('channel: ' + channel
-                + '\ntags: ' + `${tags.subscriber}`);
+    // console.log('channel: ' + channel
+    //             + '\ntags: ' + `${tags.subscriber}`);
     client.say(channel, `@${tags.username}, heya!`);
   }
 });
 
 
 function onJoinHandler (channel, tags, self) {
-  if (tags.isSubscriber) {
-    client.say(channel, `@${tags.username}, has join the chat! Welcome friend!`);
+  if (tags.subscriber) {
+    client.say(channel, `Good to see you @${tags.username}! Thanks again for the money :P`);
+  }
+  else if (tags.mod) {
+    client.say(channel, `Oh snap, it's @${tags.username}. Ban hammer incomming`);
   }
   else return;
 }
