@@ -31,6 +31,7 @@ client.on('message', (channel, tags, message, self) => {
 
 
 function onJoinHandler (channel, tags, self) {
+  console.log('Someone Joined');
   if (tags.subscriber) {
     client.say(channel, `Good to see you @${tags.username}! Thanks again for the money :P`);
   }
