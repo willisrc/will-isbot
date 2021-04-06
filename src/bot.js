@@ -11,19 +11,11 @@ const client = new tmi.Client({
 	},
 });
 
-client.on('connected', onConnectedHandler);
+client.on('join', onJoinHandler);
 
 client.connect();
 
-// client.on('join', (channel, username, self) => {
-//   //if subscriber
-//   client.say(channel, `@${tags.username}, has join the chat! Welcome friend!`);
-// })
-
 // Called every time the bot connects to Twitch chat
-function onConnectedHandler (addr, port) {
-  console.log(`* Connected to ${addr}:${port}`);
-}
 
 client.on('message', (channel, tags, message, self) => {
   // Ignore echoed messages.
@@ -36,3 +28,11 @@ client.on('message', (channel, tags, message, self) => {
     client.say(channel, `@${tags.username}, heya!`);
   }
 });
+
+
+function onJoinHandler (channel, tags, username, self) {
+  if (username.isSubscriber) {
+    client.say(channel, `@${tags.username}, has join the chat! Welcome friend!`);
+  }
+  else return;
+}
