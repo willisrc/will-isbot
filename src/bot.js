@@ -24,7 +24,7 @@ client.on('message', (channel, tags, message, self) => {
   if(message.toLowerCase() === '!hello') {
     // "@alca, heya!"
     console.log('channel: ' + channel
-                + '\ntags: ' + `@${tags.isSubscribed}`);
+                + '\ntags: ' + `@${tags}`);
     client.say(channel, `@${tags.username}, heya!`);
   }
 });
