@@ -25,7 +25,7 @@ client.on('message', (channel, tags, message, self) => {
     // "@alca, heya!"
     // console.log('channel: ' + channel
     //             + '\ntags: ' + `${tags.subscriber}`);
-    console.log(`${tags.user_id}`);
+    console.log(`${tags.userid}`);
     client.say(channel, `@${tags.username}, heya!`);
   }
 });
