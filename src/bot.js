@@ -17,7 +17,7 @@ client.connect();
 
 // Called every time the bot connects to Twitch chat
 
-client.on('message', (channel, tags, message, self) => {
+client.on('message', (channel, userstate, message, self) => {
   // Ignore echoed messages.
   if(self) return;
 
@@ -25,8 +25,8 @@ client.on('message', (channel, tags, message, self) => {
     // "@alca, heya!"
     // console.log('channel: ' + channel
     //             + '\ntags: ' + `${tags.subscriber}`);
-    console.log(`${tags.user-id}`);
-    client.say(channel, `@${tags.username}, heya!`);
+    console.log(userstate);
+    client.say(channel, `@${userstate.username}, heya!`);
   }
 });
 
