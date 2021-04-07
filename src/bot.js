@@ -25,7 +25,7 @@ client.on('message', (channel, userstate, message, self) => {
     // "@alca, heya!"
     // console.log('channel: ' + channel
     //             + '\ntags: ' + `${tags.subscriber}`);
-    console.log(userstate);
+    // console.log(userstate);
     client.say(channel, `@${userstate.username}, heya!`);
   }
 });
@@ -34,11 +34,11 @@ client.on('message', (channel, userstate, message, self) => {
 function onJoinHandler (channel, username, self) {
   console.log(`${username} Joined`);
 
-  // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-  // var xmlHttp = new XMLHttpRequest();
-  // xmlHttp.open( "GET", 'https://api.twitch.tv/helix/subscriptions?broadcaster_id=', true ); // false for synchronous request
-  // xmlHttp.send( null );
-  // console.log(xmlHttp.responseText);
+  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", 'https://api.twitch.tv/helix/subscriptions?broadcaster_id=71613667', true ); // false for synchronous request
+  xmlHttp.send( null );
+  console.log(xmlHttp.responseText);
 
 
   // tags can't be passed on the join listener. need to check sub list
