@@ -15,8 +15,6 @@ client.on('join', onJoinHandler);
 
 client.connect();
 
-client.getOptions();
-
 // Called every time the bot connects to Twitch chat
 
 client.on('message', (channel, tags, message, self) => {
@@ -34,12 +32,14 @@ client.on('message', (channel, tags, message, self) => {
 
 function onJoinHandler (channel, username, self) {
   console.log(`${username} Joined`);
+
+  console.log(client.getOptions());
   // tags can't be passed on the join listener. need to check sub list
-  if (tags.subscriber) {
-    client.say(channel, `Good to see you @${tags.username}! Thanks again for the money :P`);
-  }
-  else if (tags.mod) {
-    client.say(channel, `Oh snap, it's @${tags.username}. Ban hammer incomming`);
-  }
-  else return;
+  // if (tags.subscriber) {
+  //   client.say(channel, `Good to see you @${tags.username}! Thanks again for the money :P`);
+  // }
+  // else if (tags.mod) {
+  //   client.say(channel, `Oh snap, it's @${tags.username}. Ban hammer incomming`);
+  // }
+  // else return;
 }
