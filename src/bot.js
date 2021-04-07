@@ -33,7 +33,13 @@ client.on('message', (channel, tags, message, self) => {
 function onJoinHandler (channel, username, self) {
   console.log(`${username} Joined`);
 
-  console.log(client.getOptions());
+  const http = new XMLHttpRequest();
+  http.open("GET", 'https://api.nightbot.tv/1/subscribers');
+  http.send();
+
+  http.onreadystatechange = (e) => {
+    console.log(http.responseText)
+  }
   // tags can't be passed on the join listener. need to check sub list
   // if (tags.subscriber) {
   //   client.say(channel, `Good to see you @${tags.username}! Thanks again for the money :P`);
