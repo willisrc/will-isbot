@@ -32,11 +32,11 @@ function onJoinHandler (channel, username, self) {
   console.log(`${username} Joined`);
 
 
-  // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-  // var xmlHttp = new XMLHttpRequest();
-  // xmlHttp.open( "GET", 'https://api.twitch.tv/helix/subscriptions?broadcaster_id=71613667', true ); // false for synchronous request
-  // xmlHttp.send();
-  // console.log(xmlHttp.responseText);
+  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", 'https://api.twitch.tv/kraken/channels/TWITCH_CLIENT_ID/subscriptions', true ); // false for synchronous request
+  xmlHttp.send();
+  console.log(xmlHttp.responseText);
 
 
   // tags can't be passed on the join listener. need to check sub list
