@@ -33,6 +33,7 @@ client.on('message', (channel, tags, message, self) => {
 function onJoinHandler (channel, username, self) {
   console.log(`${username} Joined`);
 
+  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open( "GET", 'https://api.twitch.tv/helix/subscriptions', false ); // false for synchronous request
   xmlHttp.send( null );
