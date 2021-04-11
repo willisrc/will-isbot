@@ -13,6 +13,9 @@ const client = new tmi.Client({
 
 client.on('join', onJoinHandler);
 client.on('message', onMessageHandler);
+client.on('subscription', onSubHandler);
+client.on('resub', onResubHandler);
+client.on('raided', onRaidHandler);
 
 client.connect();
 
@@ -47,4 +50,17 @@ function onJoinHandler (channel, username, self) {
   //   client.say(channel, `Oh snap, it's @${tags.username}. Ban hammer incomming`);
   // }
   // else return;
+}
+
+function onSubHandler (channel, username, method, message, userstate) {
+	client.say(`Thank you for subbing @${username}`);
+}
+
+function onResubHandler (channel, username, streakMonths, message, userstate, methods) {
+	client.say(`@${username} is a glutton and came back for more. Thanks for continuing your sub with ${methods}`);
+}
+
+function onRaidHandler (channel, username, viewers) {
+	client.say(`RAID RAID RAID RAID RAID RAID`);
+	client.say(`Thanks for the raid @${username}!`);
 }
