@@ -18,7 +18,7 @@ client.connect();
 
 // Called every time the bot connects to Twitch chat
 
-function onMessageHandler ('message', (channel, userstate, message, self) {
+function onMessageHandler (channel, userstate, message, self) {
   // Ignore echoed messages.
   if(self) return;
 
