@@ -12,12 +12,13 @@ const client = new tmi.Client({
 });
 
 client.on('join', onJoinHandler);
+client.on('message', onMessageHandler);
 
 client.connect();
 
 // Called every time the bot connects to Twitch chat
 
-client.on('message', (channel, userstate, message, self) => {
+function onMessageHandler ('message', (channel, userstate, message, self) {
   // Ignore echoed messages.
   if(self) return;
 
@@ -25,18 +26,17 @@ client.on('message', (channel, userstate, message, self) => {
     // console.log(userstate);
     client.say(channel, `@${userstate.username}, hiya!`);
   }
-});
+}
 
 
 function onJoinHandler (channel, username, self) {
   console.log(`${username} Joined`);
 
-
-  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", 'https://api.twitch.tv/kraken/channels/TWITCH_CLIENT_ID/subscriptions', true ); // false for synchronous request
-  xmlHttp.send();
-  console.log(xmlHttp.responseText);
+  // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+  // var xmlHttp = new XMLHttpRequest();
+  // xmlHttp.open( "GET", 'https://api.twitch.tv/kraken/channels/TWITCH_CLIENT_ID/subscriptions', true ); // false for synchronous request
+  // xmlHttp.send();
+  // console.log(xmlHttp.responseText);
 
 
   // tags can't be passed on the join listener. need to check sub list
