@@ -25,11 +25,32 @@ function onMessageHandler (channel, userstate, message, self) {
   // Ignore echoed messages.
   if(self) return;
 
-  if(message.toLowerCase() === '!hello') {
-    // console.log(userstate);
-    client.say(channel, `@${userstate.username}, hiya!`);
-  }
-}
+	if(message.startsWith('!')) {
+		var params = message.substring(1).split(' ');
+		var cmd = params[0];
+		params = params.splice(1);
+
+		switch(cmd) {
+			case 'hello':
+				//hello function
+				client.say(channel, `@${userstate.username}`, hello friend!);
+			break;
+
+			case 'so':
+				//Shoutout function
+			break;
+
+			default:
+			break;
+
+		}
+	}
+
+//   if(message.toLowerCase() === '!hello') {
+//     // console.log(userstate);
+//     client.say(channel, `@${userstate.username}, hiya!`);
+//   }
+// }
 
 
 function onJoinHandler (channel, username, self) {
