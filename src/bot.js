@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const response = require('responses.json');
 const tmi = require('tmi.js');
 
 const client = new tmi.Client({
@@ -25,6 +26,17 @@ function onMessageHandler (channel, userstate, message, self) {
   // Ignore echoed messages.
   if(self) return;
 
+	//RESPONSE HANDLER
+	var msg = message.split(' ');
+	var x;
+	for (x in msg) {
+		if (response[msg[x]]) {
+			client.say(response[msg[x]]);
+		}
+	}
+
+
+	//FUNCTION HANDLER
 	if(message.startsWith('!')) {
 		var params = message.substring(1).split(' ');
 		var cmd = params[0];
