@@ -33,7 +33,7 @@ function onMessageHandler (channel, userstate, message, self) {
 		switch(cmd) {
 			case 'hello':
 				//hello function
-				client.say(channel, `@${userstate.username}`, hello friend!);
+				client.say(channel, `@${userstate.username}, hello friend!`);
 			break;
 
 			case 'so':
