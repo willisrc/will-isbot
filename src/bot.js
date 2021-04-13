@@ -38,6 +38,7 @@ function onMessageHandler (channel, userstate, message, self) {
 
 			case 'so':
 				//Shoutout function
+				client.say(channel, `Shout out to twitch.tv/` + params + ` for being awesome! Go check them out and send them some love <3`);
 			break;
 
 			default:
