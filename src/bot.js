@@ -50,7 +50,7 @@ function onMessageHandler (channel, userstate, message, self) {
 //     // console.log(userstate);
 //     client.say(channel, `@${userstate.username}, hiya!`);
 //   }
-// }
+}
 
 
 function onJoinHandler (channel, username, self) {
