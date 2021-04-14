@@ -50,16 +50,16 @@ function onMessageHandler (channel, userstate, message, self) {
 
 		}
 	}
-	else {
-		//RESPONSE HANDLER
-		var msg = message.split(' ');
-		var x;
-		for (x in msg) {
-			if (responses[msg[x]]) {
-				client.say(responses[msg[x]]);
-			}
-		}
-	}
+	// else {
+	// 	//RESPONSE HANDLER
+	// 	var msg = message.split(' ');
+	// 	var x;
+	// 	for (x in msg) {
+	// 		if (responses[msg[x]]) {
+	// 			client.say(responses[msg[x]]);
+	// 		}
+	// 	}
+	// }
 
 
 
