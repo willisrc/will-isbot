@@ -27,16 +27,6 @@ function onMessageHandler (channel, userstate, message, self) {
   // Ignore echoed messages.
   if(self) return;
 
-	//RESPONSE HANDLER
-	var msg = message.split(' ');
-	var x;
-	for (x in msg) {
-		if (responses[msg[x]]) {
-			client.say(responses[msg[x]]);
-		}
-	}
-
-
 	//FUNCTION HANDLER
 	if(message.startsWith('!')) {
 		var params = message.substring(1).split(' ');
@@ -55,10 +45,23 @@ function onMessageHandler (channel, userstate, message, self) {
 			break;
 
 			default:
+				return;
 			break;
 
 		}
 	}
+	else {
+		//RESPONSE HANDLER
+		var msg = message.split(' ');
+		var x;
+		for (x in msg) {
+			if (responses[msg[x]]) {
+				client.say(responses[msg[x]]);
+			}
+		}
+	}
+
+
 
 //   if(message.toLowerCase() === '!hello') {
 //     // console.log(userstate);
