@@ -31,8 +31,8 @@ function onMessageHandler (channel, userstate, message, self) {
 	var msg = message.split(' ');
 	var x;
 	for (x in msg) {
-		if (response[msg[x]]) {
-			client.say(response[msg[x]]);
+		if (responses[msg[x]]) {
+			client.say(responses[msg[x]]);
 		}
 	}
 
