@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-var responses = JSON.parse('responses.json');
+const responses = require('./responses.json');
 
 const tmi = require('tmi.js');
 
