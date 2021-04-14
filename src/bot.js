@@ -51,14 +51,14 @@ function onMessageHandler (channel, userstate, message, self) {
 		return;
 	}
 
-	//RESPONSE HANDLER
-	var msg = message.split(' ');
-	var x;
-	for (x in msg) {
-		if (responses[msg[x]]) {
-			client.say(responses[msg[x]]);
-		}
-	}
+	// //RESPONSE HANDLER
+	// var msg = message.split(' ');
+	// var x;
+	// for (x in msg) {
+	// 	if (responses[msg[x]]) {
+	// 		client.say(responses[msg[x]]);
+	// 	}
+	// }
 
 //   if(message.toLowerCase() === '!hello') {
 //     // console.log(userstate);
