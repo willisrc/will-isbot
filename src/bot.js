@@ -68,6 +68,7 @@ function onMessageHandler (channel, userstate, message, self) {
 
 	if (responses[message]) {
 		console.log(message);
+		console.log(responses[message]);
 		client.say(responses[message].toString());
 	}
 
