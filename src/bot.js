@@ -69,7 +69,8 @@ function onMessageHandler (channel, userstate, message, self) {
 	if (responses[message]) {
 		console.log(message);
 		console.log(responses[message]);
-		client.say(responses[message].toString());
+		var temp = responses[message]
+		client.say(temp);
 	}
 
 //   if(message.toLowerCase() === '!hello') {
