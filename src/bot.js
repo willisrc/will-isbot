@@ -57,20 +57,20 @@ function onMessageHandler (channel, userstate, message, self) {
 	}
 
 	//RESPONSE HANDLER
-	// var msg = message.split(' ');
-	// console.log(msg);
-	// var x;
-	// for (x in msg) {
-	// 	if (responses[msg[x]]) {
-	// 		client.say(responses[msg[x]]);
-	// 	}
-	// }
-
-	if (responses[message]) {
-		console.log(message);
-		console.log(responses[message]);
-		client.say(channel, responses[message]);
+	var msg = message.split(' ');
+	console.log(msg);
+	var x;
+	for (x in msg) {
+		if (responses[msg[x]]) {
+			client.say(channel, responses[msg[x]]);
+		}
 	}
+
+	// if (responses[message]) {
+	// 	// console.log(message);
+	// 	// console.log(responses[message]);
+	// 	client.say(channel, responses[message]);
+	// }
 
 //   if(message.toLowerCase() === '!hello') {
 //     // console.log(userstate);
