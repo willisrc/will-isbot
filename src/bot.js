@@ -56,14 +56,14 @@ function onMessageHandler (channel, userstate, message, self) {
 		return;
 	}
 
-	// //RESPONSE HANDLER
-	// var msg = message.split(' ');
-	// var x;
-	// for (x in msg) {
-	// 	if (responses[msg[x]]) {
-	// 		client.say(responses[msg[x]]);
-	// 	}
-	// }
+	//RESPONSE HANDLER
+	var msg = message.split(' ');
+	var x;
+	for (x in msg) {
+		if (responses[msg[x]]) {
+			client.say(responses[msg[x]]);
+		}
+	}
 
 //   if(message.toLowerCase() === '!hello') {
 //     // console.log(userstate);
@@ -101,6 +101,6 @@ function onResubHandler (channel, username, streakMonths, message, userstate, me
 }
 
 function onRaidHandler (channel, username, viewers) {
-	client.say(`RAID RAID RAID RAID RAID RAID`);
+	client.say(`RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun`);
 	client.say(`Thanks for the raid @${username}!`);
 }
