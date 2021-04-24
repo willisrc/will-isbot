@@ -58,6 +58,7 @@ function onMessageHandler (channel, userstate, message, self) {
 
 	//RESPONSE HANDLER
 	var msg = message.split(' ');
+	console.log(msg);
 	var x;
 	for (x in msg) {
 		if (responses[msg[x]]) {
