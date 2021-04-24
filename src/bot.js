@@ -44,6 +44,11 @@ function onMessageHandler (channel, userstate, message, self) {
 				client.say(channel, `Shout out to twitch.tv/` + params + ` for being awesome! Go check them out and send them some love <3`);
 			break;
 
+			case 'playlist':
+				//spotify playlist
+				client.say(channel, `Here is the current playlist I use during streams: https://open.spotify.com/playlist/087Ettes0ZzLQ6WViwrz39?si=201676f0ccc34e40`)
+			break;
+
 			default:
 			break;
 
