@@ -62,11 +62,11 @@ function onMessageHandler (channel, userstate, message, self) {
 						isVoting = true;
 						console.log('Voting is now on');
 					}
-					else if (params[0].localeCompare('off') {
+					else if (params[0].localeCompare('off') == 0) {
 						isVoting = false;
 						console.log('Voting is now off');
 					}
-					else if (params[0].localeCompare('clear') {
+					else if (params[0].localeCompare('clear') == 0) {
 						console.log('Voting will now be cleared');
 						// vote.clear()
 					}
