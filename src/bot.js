@@ -57,10 +57,10 @@ function onMessageHandler (channel, userstate, message, self) {
 				//check if user is mod/channel owner
 				console.log(params);
 				if (userstate.username == 'will_is' || userstate.mod == true) {
-					if (params == 'on') {
+					if (params[0] == 'on') {
 						isVoting = true;
 					}
-					if (params == 'off') {
+					if (params[0] == 'off') {
 						isVoting = false;
 					}
 					else {
