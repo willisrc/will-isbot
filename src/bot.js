@@ -58,10 +58,10 @@ function onMessageHandler (channel, userstate, message, self) {
 				console.log(params);
 				console.log(params[0]);
 				if (userstate.username == 'will_is' || userstate.mod == true) {
-					if (params[0] == 'on') {
+					if (params[0].toString() == 'on') {
 						isVoting = true;
 					}
-					if (params[0] == 'off') {
+					if (params[0].toString() == 'off') {
 						isVoting = false;
 					}
 					else {
