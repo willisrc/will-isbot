@@ -58,11 +58,15 @@ function onMessageHandler (channel, userstate, message, self) {
 				console.log(params);
 				console.log(params[0]);
 				if (userstate.username == 'will_is' || userstate.mod == true) {
-					if (params[0].toString() === 'on') {
+					if (params[0].localeCompare('on') == 0) { //params[0] === 'on'
 						isVoting = true;
 					}
-					if (params[0].toString() === 'off') {
+					else if (params[0] === 'off') {
 						isVoting = false;
+					}
+					else if (params[0] === 'clear') {
+						console.log('Voting will now be cleared');
+						// vote.clear()
 					}
 					else {
 						client.say(channel, `Invalid param, try again`);
