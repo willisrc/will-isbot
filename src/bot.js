@@ -2,6 +2,8 @@ require('dotenv').config();
 
 const responses = require('./responses.json');
 
+const vote = require('./vote.js');
+
 const tmi = require('tmi.js');
 
 const client = new tmi.Client({
@@ -20,6 +22,8 @@ client.on('resub', onResubHandler);
 client.on('raided', onRaidHandler);
 
 client.connect();
+
+var isVoting = false;
 
 // Called every time the bot connects to Twitch chat
 
@@ -46,7 +50,37 @@ function onMessageHandler (channel, userstate, message, self) {
 
 			case 'playlist':
 				//spotify playlist
-				client.say(channel, `Here is the current playlist I use during streams: https://open.spotify.com/playlist/087Ettes0ZzLQ6WViwrz39?si=201676f0ccc34e40`)
+				client.say(channel, `Here is the current playlist I use during streams: https://open.spotify.com/playlist/087Ettes0ZzLQ6WViwrz39?si=201676f0ccc34e40`);
+			break;
+
+			case 'voting':
+				//check if user is mod/channel owner
+				if (userstate.username == 'will_is' || userstate.mod == true) {
+					if (params == 'on') {
+						isVoting = true;
+					}
+					if (params == 'off') {
+						isVoting = false;
+					}
+					else {
+						client.say(channel, `Invalid param, try again`);
+					}
+				}
+				else {
+					client.say(channel, `You do not have permisson to use this command`);
+				}
+			break;
+
+			case 'vote':
+				//check if boolean is true
+				if (!isVoting) {
+					console.log('voting is not enabled');
+					return;
+				}
+				else {
+					console.log('voting is enabled');
+					//vote.record(userstate.username, params)
+				}
 			break;
 
 			default:
