@@ -58,13 +58,15 @@ function onMessageHandler (channel, userstate, message, self) {
 				console.log(params);
 				console.log(params[0]);
 				if (userstate.username == 'will_is' || userstate.mod == true) {
-					if (params[0].localeCompare('on') == 0) { //params[0] === 'on'
+					if (params[0].localeCompare('on') == 0) {
 						isVoting = true;
+						console.log('Voting is now on');
 					}
-					else if (params[0] === 'off') {
+					else if (params[0].localeCompare('off') {
 						isVoting = false;
+						console.log('Voting is now off');
 					}
-					else if (params[0] === 'clear') {
+					else if (params[0].localeCompare('clear') {
 						console.log('Voting will now be cleared');
 						// vote.clear()
 					}
