@@ -87,7 +87,7 @@ function onMessageHandler (channel, userstate, message, self) {
 				}
 				else {
 					console.log('voting is enabled');
-					//vote.record(userstate.username, params)
+					vote.record(userstate, params);
 				}
 			break;
 
