@@ -10,7 +10,7 @@ function record (userstate, vote) {
   v = {
     username: userstate.username,
     isSub: userstate.subscriber,
-    vote: vote
+    vote: vote.toString()
   };
 
   for (i = 0; i < votes.length; i++) {
