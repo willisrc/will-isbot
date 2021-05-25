@@ -30,6 +30,8 @@ var isVoting = false;
 function onMessageHandler (channel, userstate, message, self) {
   // Ignore echoed messages.
   if(self) return;
+	//Ignore Nightbot
+	if(userstate.username == 'Nightbot') return;
 
 	//FUNCTION HANDLER
 	if(message.startsWith('!')) {

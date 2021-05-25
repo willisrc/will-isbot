@@ -13,7 +13,7 @@ function record (userstate, vote) {
     vote: vote
   };
 
-  for (int i = 0; i < votes.size(); i++) {
+  for (i = 0; i < votes.size(); i++) {
     if (votes[i].username == v.username) {
       votes[i] = v;
       overwrite = true;
