@@ -37,4 +37,8 @@ function clear () {
   votes = [];
 }
 
-module.exports = {record, clear};
+function print () {
+  console.log(votes);
+}
+
+module.exports = {record, clear, print};

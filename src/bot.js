@@ -68,7 +68,10 @@ function onMessageHandler (channel, userstate, message, self) {
 					}
 					else if (params[0].localeCompare('clear') == 0) {
 						console.log('Voting will now be cleared');
-						// vote.clear()
+						vote.clear();
+					}
+					else if (params[0].localeCompare('print') == 0) {
+						vote.print();
 					}
 					else {
 						client.say(channel, `Invalid param, try again`);
