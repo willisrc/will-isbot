@@ -1,6 +1,6 @@
 //json to record data
 votes = []; //make actual txt file? delete when clear. initial check to see if it exists and create if it doesnt
-
+//// TODO: MAKE CORRESPONDING WEB PAGE THAT DISPLAYS THE ARRAY IN REAL TIME
 var overwrite = false;
 
 
