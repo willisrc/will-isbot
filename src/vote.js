@@ -28,6 +28,7 @@ function record (userstate, vote) {
 // if no, do nothing
 
 // write data to array
+console.log(votes);
 }
 
 function clear () {
