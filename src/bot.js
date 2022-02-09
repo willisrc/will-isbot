@@ -52,7 +52,7 @@ function onMessageHandler (channel, userstate, message, self) {
 
 			case 'playlist':
 				//spotify playlist
-				client.say(channel, `Here is the current playlist I use during streams: https://open.spotify.com/playlist/087Ettes0ZzLQ6WViwrz39?si=201676f0ccc34e40`);
+				client.say(channel, `Here is the current playlist I use during streams: https://open.spotify.com/playlist/7tUt7hqU4p21C3dw4cdMLU?si=bfd45c999c7d4ad7`);
 			break;
 
 			case 'voting':
@@ -146,6 +146,7 @@ function onJoinHandler (channel, username, self) {
 
 function onSubHandler (channel, username, method, message, userstate) {
 	client.say(`Thank you for subbing @${username}`);
+	console.log('@${username}` subbed')
 }
 
 function onResubHandler (channel, username, streakMonths, message, userstate, methods) {
