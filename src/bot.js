@@ -17,7 +17,7 @@ const client = new tmi.Client({
 
 client.on('join', onJoinHandler);
 client.on('message', onMessageHandler);
-client.on('subscription', onSubHandler);
+client.on('sub', onSubHandler);
 client.on('resub', onResubHandler);
 client.on('raided', onRaidHandler);
 
@@ -155,5 +155,5 @@ function onResubHandler (channel, username, streakMonths, message, userstate, me
 
 function onRaidHandler (channel, username, viewers) {
 	client.say(`RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun`);
-	client.say(`Thanks for the raid @${username}!`);
+	client.say(`Thanks for the raid, @${username}!`);
 }
