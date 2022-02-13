@@ -15,10 +15,22 @@ const client = new tmi.Client({
 	},
 });
 
+client.on("subscription", function (channel, username, methods ) {
+
+	client.say(channel, username + " Has subscribed PogChamp " )
+	
+	});
+	
+client.on("resub", function (channel, username, months, message, userstate, methods) {
+
+	client.say(channel, username + " Has subscribed for " + months + " months in a row PogChamp " )
+
+	});
+
 client.on('join', onJoinHandler);
 client.on('message', onMessageHandler);
-client.on('sub', onSubHandler);
-client.on('resub', onResubHandler);
+// client.on('subscription', onSubHandler);
+// client.on('resub', onResubHandler);
 client.on('raided', onRaidHandler);
 
 client.connect();
