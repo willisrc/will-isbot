@@ -15,23 +15,12 @@ const client = new tmi.Client({
 	},
 });
 
-client.on("subscription", function (channel, username, methods ) {
-
-	client.say(channel, username + " Has subscribed PogChamp " )
-	
-	});
-	
-client.on("resub", function (channel, username, months, message, userstate, methods) {
-
-	client.say(channel, username + " Has subscribed for " + months + " months in a row PogChamp " )
-
-	});
-
 client.on('join', onJoinHandler);
 client.on('message', onMessageHandler);
-// client.on('subscription', onSubHandler);
-// client.on('resub', onResubHandler);
+client.on('subscription', onSubHandler);
+client.on('resub', onResubHandler);
 client.on('raided', onRaidHandler);
+client.on('subgift', onSubGiftHandler);
 
 client.connect();
 
@@ -157,15 +146,19 @@ function onJoinHandler (channel, username, self) {
 }
 
 function onSubHandler (channel, username, method, message, userstate) {
-	client.say(`Thank you for subbing @${username}`);
+	client.say(channel, `Thank you for subbing @${username}!`);
 	console.log('@${username}` subbed')
 }
 
 function onResubHandler (channel, username, streakMonths, message, userstate, methods) {
-	client.say(`@${username} is a glutton and came back for more. Thanks for continuing your sub with ${methods}`);
+	client.say(channel, `@${username} resubed for @${months}! Thanks for coming back!`);
 }
 
 function onRaidHandler (channel, username, viewers) {
-	client.say(`RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun`);
-	client.say(`Thanks for the raid, @${username}!`);
+	client.say(channel, `RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun`);
+	client.say(channel, `Thanks for the raid, @${username}!`);
 }
+
+function onSubGiftHandler (channel, username, method, message, userstate, months) {
+	client.say(channel, `@${username} gifted some subs to the community! Now say thank you.`)
+};
