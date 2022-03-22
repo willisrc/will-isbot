@@ -157,7 +157,7 @@ function onJoinHandler (channel, username, self) {
 }
 
 function onSubHandler (channel, username, method, message, userstate) {
-	console.log('@${username}` subbed')
+	console.log(`@${username} subbed`)
 	client.say(channel, `Thank you for subbing @${username}!`)
 }
 
