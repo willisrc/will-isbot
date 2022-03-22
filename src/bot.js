@@ -95,6 +95,17 @@ function onMessageHandler (channel, userstate, message, self) {
 				}
 			break;
 
+			case 'flip':
+				//flip a coin
+				coin = Math.floor(Math.random() * 2)
+				if (coin == 0) {
+					client.say(channel, `Heads`);
+				}
+				else {
+					client.say(channel, `Tails`);
+				}
+			break;
+
 			default:
 			break;
 
@@ -126,7 +137,7 @@ function onMessageHandler (channel, userstate, message, self) {
 
 
 function onJoinHandler (channel, username, self) {
-  console.log(`${username} Joined`);
+  console.log(`${username} Joined`)
 
   // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   // var xmlHttp = new XMLHttpRequest();
@@ -146,18 +157,18 @@ function onJoinHandler (channel, username, self) {
 }
 
 function onSubHandler (channel, username, method, message, userstate) {
-	client.say(channel, `Thank you for subbing @${username}!`);
 	console.log('@${username}` subbed')
-}
+	client.say(channel, `Thank you for subbing @${username}!`)
+};
 
 function onResubHandler (channel, username, streakMonths, message, userstate, methods) {
-	client.say(channel, `@${username} resubed for @${months}! Thanks for coming back!`);
-}
+	client.say(channel, `@${username} resubed for @${months}! Thanks for coming back!`)
+};
 
 function onRaidHandler (channel, username, viewers) {
-	client.say(channel, `RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun`);
-	client.say(channel, `Thanks for the raid, @${username}!`);
-}
+	client.say(channel, `RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun RAID peepoRun`)
+	client.say(channel, `Thanks for the raid, @${username}!`)
+};
 
 function onSubGiftHandler (channel, username, method, message, userstate, months) {
 	client.say(channel, `@${username} gifted some subs to the community! Now say thank you.`)
